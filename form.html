@@ -1,0 +1,79 @@
+<form action="register.php" method="post">
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required>
+  
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <input type="submit" value="Create Account">
+    <input type="button" value="Log In">
+  </form>
+
+  <!---->
+  <?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $fullname = $_POST['fullname'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $email = $_POST['email'];
+
+  // Store the form data in a database
+  // ...
+
+  // Redirect the user to the login page
+  header('Location: login.php');
+  exit;
+}
+?>
+
+
+<!---->
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 500px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  input[type="submit"],
+  input[type="button"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover,
+  input[type="button"]:hover {
+    background-color: #0062cc;
+  }
+   
